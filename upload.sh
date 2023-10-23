@@ -13,5 +13,5 @@ aws s3 cp <(ls /var/log) s3://agnija-bucket-devops4ml-aws/logs/uploaded_files.tx
 instance_id=`curl -X GET http://169.254.169.254/latest/meta-data/instance-id`
 
 # Terminate the EC2 instance
-aws ec2 terminate-instances --instance-ids $(ec2-metadata --instance-id)
+# aws ec2 terminate-instances --instance-ids $(ec2-metadata --instance-id)
 aws ec2 terminate-instances --instance-ids $instance_id
