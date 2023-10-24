@@ -46,8 +46,8 @@ variable "https_port" {
   default     = 443
 }
 
-variable "aws_s3_bucket" {
-  description = "aws s3 bucket name"
+variable "s3_bucket_name" {
+  description = "s3_bucket_name"
   type        = string
   default     = "agnija-bucket-devops4ml-aws"
 }

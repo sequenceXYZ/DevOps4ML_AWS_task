@@ -12,8 +12,8 @@ resource "aws_default_vpc" "default" {
 
 # create a security group for the instance
 resource "aws_security_group" "instance_sg" {
-  name        = "sftp-server-sg"
-  description = "Security group for the SFTP server"
+  name        = "instance_sg"
+  description = "Security group for the instance"
   vpc_id      = aws_default_vpc.default.id
 
   # traffic rules
@@ -27,7 +27,7 @@ resource "aws_security_group" "instance_sg" {
     from_port   = var.https_port
     to_port     = var.https_port
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["212.3.194.79/32"]
   }
 
   egress {
@@ -53,7 +53,7 @@ resource "aws_instance" "Agnija_Instance" {
   count                  = var.instance_count
   key_name               = var.key_name
   iam_instance_profile   = var.iam_instance_profile
-  vpc_security_group_ids = [aws_security_group.sftp_server_sg.id]
+  vpc_security_group_ids = [aws_security_group.instance_sg.id]
 
   user_data = file("upload.sh")
 
@@ -66,9 +66,8 @@ resource "aws_instance" "Agnija_Instance" {
 }
 
 # Create resource - S3 bucket
-resource "aws_s3_bucket" "example" {
-  bucket = "agnija-bucket-devops4ml-aws"
-
+resource "aws_s3_bucket" "mybucket" {
+  bucket = var.s3_bucket_name
   tags = {
     Name        = "agnija-bucket-devops4ml-aws"
     Owner       = "Agnija Vjakse"
@@ -77,3 +76,25 @@ resource "aws_s3_bucket" "example" {
   }
 }
 
+
+#---------------------------------------------------------
+/*
+# Upload the file to the bucket
+resource "aws_s3_object" "single_object" {
+  bucket = aws_s3_bucket.mybucket.id
+  key    = "file.txt"
+  source = "/home/user/Desktop/file.txt"
+
+  etag = filemd5("/home/user/Desktop/file.txt")
+}
+
+# Upload the multi files to the bucket
+resource "aws_s3_object" "multi_object" {
+  bucket   = aws_s3_bucket.mybucket.id
+  for_each = fileset("/home/user/Desktop/file", "*")
+  key      = each.value
+  source   = "/home/user/Desktop/file/$(each.value)"
+
+  etag = filemd5("/home/user/Desktop/file.txt")
+}
+*/
