@@ -27,7 +27,7 @@ resource "aws_security_group" "instance_sg" {
     from_port   = var.https_port
     to_port     = var.https_port
     protocol    = "tcp"
-    cidr_blocks = ["212.3.194.79/32"]
+    cidr_blocks = ["private.ip"]
   }
 
   egress {
