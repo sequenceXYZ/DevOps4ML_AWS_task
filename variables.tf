@@ -34,12 +34,6 @@ variable "iam_instance_profile" {
   default     = "role-d4ml-cloud9-deployment"
 }
 
-variable "http_port" {
-  description = "http server port"
-  type        = number
-  default     = 80
-}
-
 variable "https_port" {
   description = "https server port"
   type        = number
@@ -50,5 +44,10 @@ variable "s3_bucket_name" {
   description = "s3_bucket_name"
   type        = string
   default     = "agnija-bucket-devops4ml-aws"
+}
+
+variable "cidr_blocks" {
+  type = string
+  default = ["212.3.194.79/32"]
 }
 
