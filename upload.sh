@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Install AWS CLI
-sudo apt install aws-cli -y
-
 # Upload the /var/log/ directory to the S3 bucket
-aws s3 cp -R /var/log s3://agnija-bucket.devops4ml-aws/logs
+aws s3 cp -R /var/log s3://agnija-bucket-devops4ml-aws/logs
 
 # To create a file with the list of uploaded files and save it to the S3 bucket:
 ls -l /var/log > /var/log/all_files.txt
