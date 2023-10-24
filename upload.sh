@@ -17,6 +17,6 @@ aws ec2 terminate-instances --instance-ids $instance_id
 
 
 -------------------------------------------------------
-another option
+# another option
 # use the IMDSv2 method to retrieve the instance ID of the EC2 instance
 instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
