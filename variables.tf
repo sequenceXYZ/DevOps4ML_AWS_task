@@ -48,6 +48,6 @@ variable "s3_bucket_name" {
 
 variable "cidr_blocks" {
   type = string
-  default = ["212.3.194.79/32"]
+  default = ["private.ip"]
 }
 
