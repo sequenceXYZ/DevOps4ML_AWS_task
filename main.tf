@@ -22,6 +22,7 @@ resource "aws_security_group" "instance_sg" {
     to_port     = var.https_port
     protocol    = "tcp"
     cidr_blocks = ["private.ip"]
+
   }
 
   tags = {
@@ -41,6 +42,14 @@ resource "aws_instance" "Agnija_Instance" {
   key_name               = var.key_name
   iam_instance_profile   = var.iam_instance_profile
   vpc_security_group_ids = [aws_security_group.instance_sg.id]
+
+
+  metadata_options {    
+                    http_tokens="required"    
+                    http_put_response_hop_limit="3"    
+                    http_endpoint="enabled"   
+  }
+
 
   user_data = file("upload.sh")
 

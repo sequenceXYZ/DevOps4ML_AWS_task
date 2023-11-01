@@ -4,4 +4,4 @@ instance_type        = "t2.micro"
 instance_count       = 1
 iam_instance_profile = "role-d4ml-cloud9-deployment"
 key_name             = "Agnija_key"
-aws_s3_bucket        = "agnija-bucket-devops4ml-aws"
+s3_bucket_name       = "agnija-bucket-devops4ml-aws"
