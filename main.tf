@@ -28,7 +28,7 @@ resource "aws_security_group" "instance_sg" {
   tags = {
     Name        = "Agnija_Instance"
     Owner       = "Agnija Vjakse"
-    Project     = "DevOps4ML_AWS"
+    Project     = "DevOps_AWS"
     Environment = "Dev"
   }
 }
@@ -56,7 +56,7 @@ resource "aws_instance" "Agnija_Instance" {
   tags = {
     Name        = "Agnija_Instance"
     Owner       = "Agnija Vjakse"
-    Project     = "DevOps4ML_AWS"
+    Project     = "DevOps_AWS"
     Environment = "Dev"
   }
 }
@@ -67,7 +67,7 @@ resource "aws_s3_bucket" "mybucket" {
   tags = {
     Name        = "agnija-bucket-devops4ml-aws"
     Owner       = "Agnija Vjakse"
-    Project     = "DevOps4ML_AWS"
+    Project     = "DevOps_AWS"
     Environment = "Dev"
   }
 }
