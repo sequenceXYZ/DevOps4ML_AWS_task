@@ -65,7 +65,7 @@ resource "aws_instance" "Agnija_Instance" {
 resource "aws_s3_bucket" "mybucket" {
   bucket = var.s3_bucket_name
   tags = {
-    Name        = "agnija-bucket-devops4ml-aws"
+    Name        = "<bucket-name>"
     Owner       = "Agnija Vjakse"
     Project     = "DevOps_AWS"
     Environment = "Dev"
