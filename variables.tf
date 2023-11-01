@@ -13,7 +13,7 @@ variable "key_name" {
 variable "ami_id" {
   description = "AMI ID of the instance"
   type        = string
-  default     = "ami-08a34e890d3f70022"
+  default     = "ami-*"
 }
 
 variable "instance_type" {
@@ -31,7 +31,7 @@ variable "instance_count" {
 variable "iam_instance_profile" {
   description = "The IAM instance profile to attach to the instance"
   type        = string
-  default     = "role-d4ml-cloud9-deployment"
+  default     = "role-*"
 }
 
 variable "https_port" {
@@ -43,7 +43,7 @@ variable "https_port" {
 variable "s3_bucket_name" {
   description = "s3_bucket_name"
   type        = string
-  default     = "agnija-bucket-devops4ml-aws"
+  default     = "<bucket-name>"
 }
 
 variable "cidr_blocks" {
