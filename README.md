@@ -1,17 +1,12 @@
-### DevOps4ML_AWS_task
+#### Description
 
-#### Hands On task AWS
-
-To be more familiar with AWS resources, AWS CLI, the next task should be done by Graduate.
-Description:
-As a junior DevOps engineer, you need to prove to your client that it is possible to upload 500MB of file from EC2 Instance to an S3 bucket and automate this procedure.
+Prove to your client that it is possible to upload 500MB of file from EC2 Instance to an S3 bucket and automate this procedure.
 
 A client wants to know:
 - Which resources will be created during the procedure
 - How long will it take to upload a 500MB file from EC2 t2.micro to S3 bucket
 - Provide monitoring graph from AWS
-  
-  
+    
 What must be done:
 - Automate this procedure
 - Resource provision must be done by Terraform
