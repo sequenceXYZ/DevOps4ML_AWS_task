@@ -13,6 +13,7 @@ TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metad
 instance_id=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/instance-id)
 
 # Terminate the EC2 instance
+# aws ec2 terminate-instances --instance-ids $(ec2-metadata --instance-id)
 aws ec2 terminate-instances --instance-ids $instance_id
 
 
