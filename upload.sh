@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Upload the /var/log/ directory to the S3 bucket
-aws s3 cp -R /var/log s3://agnija-bucket-devops4ml-aws/logs
+aws s3 cp -R /var/log s3://<bucket-name>/logs
 
 # To create a file with the list of uploaded files and save it to the S3 bucket:
 ls -l /var/log > /var/log/all_files.txt
-aws s3 cp /var/log/all_files.txt s3://agnija-bucket-devops4ml-aws/logs/all_files.txt
+aws s3 cp /var/log/all_files.txt s3://,bucket-name>/logs/all_files.txt
 
 # use the IMDSv2 method to retrieve the instance ID of the EC2 instance
 # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
